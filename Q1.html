@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+ <link rel="stylesheet" href="css/bootstrap.css"  type="text/css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script type="text/javascript">
+      	   $("document").ready(function(){ 
+             
+              $("#your-name").html("name : "+localStorage.getItem("name")); 
+               var temparray= new Array();
+               
+               setInterval(countdown,1000);
+                 
+                 $(".next").click(function(){
+                  temparray.push($( "input:checked" ).val());
+                  localStorage.setItem("Temp-Array", JSON.stringify(temparray));       
+                });
+               
+            var timer=25;
+            function countdown() {
+            if(timer<10)
+              { 
+               $(".timer").html("00:0"+timer);
+              }
+              else
+                {
+                  $(".timer").html("00:"+ timer);
+                }
+            timer--;
+            if(timer==0){
+              window.location.href="Q2.html";
+                if($( "input:checked" ).val()!="")
+                {
+                temparray.push($( "input:checked" ).val());  
+                localStorage.setItem("Temp-Array", JSON.stringify(temparray));
+                }
+            }
+            }
+
+             });
+
+      </script>
+
+<style type="text/css">
+    .wel{
+      font-family: cursive;
+      color:  #660033;
+    }
+    
+  </style>
+<body>
+<div class="container mt-5">
+	<h3 class="wel" id="your-name"></h3>
+  <div style="height: 50px;"> </div>
+  <h3 class="wel">Q1. What is the name of technical instructor? </h3>
+ <form action="Q2.html">
+      <div class="row">
+      <div class="col-8"> 
+        <input type="radio" id="r1" name="group1" value="Ahmad">
+        <span class="wel"  id="incorrect-answer1" >Ahmad  </span>
+        <input type="radio" id="r2" name="group1" value="anas">
+        <span class="wel" id="incorrect-answer2" >anas</span>
+        <input type="radio" id="rc" name="group1" value="Salameh">
+        <span class="wel" id="correct-answer">Salameh</span>
+        <input type="radio" id="r3" name="group1" value="mai">
+        <span class="wel" id="incorrect-answer3" >mai</span>
+        </div>
+        <div class="col-2 timer wel">
+          
+        </div>
+        <div class="col-2">   
+        <button class="next wel">Next</button>
+         </div>
+        </div> 
+ </form>
+ </div>
+</body>
+</html>

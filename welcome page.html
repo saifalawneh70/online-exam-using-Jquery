@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+ <link rel="stylesheet" href="css/bootstrap.css"  type="text/css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script type="text/javascript">
+      	   $("document").ready(function(){ 
+      	   	
+            var answers= new Array();
+                answers.push("Salameh");
+                answers.push("15");
+                answers.push("2");
+                answers.push("4");
+                answers.push("52");
+                answers.push("802");
+                answers.push("600");
+                 localStorage.setItem("answersAll", JSON.stringify(answers));
+                $(".start-exam").click(function(){
+                 
+                 localStorage.setItem("name", $('.input1').val());
+                 
+                });
+             });
+      </script>
+      <style type="text/css">
+		.wel{
+			font-family: cursive;
+			color:  #660033;
+		}
+	  </style>
+<body>
+	<div style="height: 250px;"></div>
+<div class=" wel text-center">
+<h3> welcome to exam</h3>
+<form action="Q1.html"> <input class="input1 mt-5" type="text" name="" placeholder="please enter your name">
+<button class ="wel start-exam">Start Exam</button>
+</form>
+</div>
+</body>
+</html>
